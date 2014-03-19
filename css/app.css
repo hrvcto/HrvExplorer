@@ -1,0 +1,27 @@
+html,body,ul,li,ol,dl,dd,dt,p,h1,h2,h3,h4,h5,h6,form,fieldset,legend,img{margin:0;padding:0;}
+fieldset,img{border:none;}
+address,caption,cite,code,dfn,th,var{font-style:normal;font-weight:normal;}
+ul,ol{list-style:none;}
+input{padding-top:0;padding-bottom:0;}
+input::-moz-focus-inner{border:none;padding:0;}
+select,input{vertical-align:middle;}
+select,input,textarea{font-size:12px;margin:0;}
+input[type="text"],input[type="password"],textarea{outline-style:none;-webkit-appearance:none;}
+textarea{resize:none;}
+body{color:#fff; font: 12px/24px "Arial","Microsoft YaHei","\u5FAE\u8F6F\u96C5\u9ED1","SimSun","\u5B8B\u4F53";}
+a{color:#fff; text-decoration:none;}
+a:visited{color:#333;}
+a:hover{color:#ccc;}
+.clearfix:after{clear:both;content:".";display:block;height:0;visibility:hidden;}
+
+html,body{width:100%; height:100%;}
+.app{width:100%; height:100%; overflow:hidden; position:relative;}
+
+.cesium{width:100%; height:100%; background-color:black;}
+
+.operation{position:absolute; width:100%; height:100%; top:100%; -webkit-transform:translate3d(0,0,0); -webkit-transition:top 0.2s ease-out;}
+.operation.show{top:0;}
+
+.operation-board{background-color:rgba(0,0,0,0.5); position:absolute; top:50px; left:100px; right:100px; bottom:50px; border:1px solid rgba(255,255,255,0.6); border-radius:5px;}
+.operation-board .tit{line-height:50px; text-align:center; background-color:rgba(0,0,0,0.8); border-top-left-radius:5px; border-top-right-radius:5px; border-bottom:1px solid rgba(255,255,255,0.2); font-size:20px;}
+.operation-board .c{overflow-y:scroll; font-size:14px; position:absolute; top:51px; left:0; right:0; bottom:0; background-color:rgba(0,0,0,0.7); padding:10px;}
