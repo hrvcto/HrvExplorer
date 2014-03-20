@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HrvExplorer</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="assets/styles/app.css">
+  <link rel="stylesheet" href="Cesium/Widgets/widgets.css">
+</head>
+<body>
+<div class="app">
+  <div class="cesium" id="cesiumContainer"></div>
+
+  <div class="operation clearfix" id="operation">
+    <div class="ope-type-w">
+      <a class="icon editor" id="operationTrigger"><span>Edit</span></a>
+      <div class="ope-type" id="operationsTrigger">
+        <a class="icon shape" data-command="openShapeOperations"><span>Shape</span></a>
+        <a class="icon ruler" data-command="openRulerOperations"><span>Rule</span></a>
+      </div>
+    </div>
+
+    <div class="ope-command" data-command="openShapeOperations">
+
+      <div class="command-group">
+        <a class="icon line" data-command="drawLine"><span>Line</span></a>
+        <a class="icon rect" data-command="drawRect"><span>Rect</span></a>
+      </div>
+
+    </div>
+
+    <div class="ope-command" data-command="openRulerOperations">
+
+      <div class="command-group">
+        <a class="icon line" data-command="drawLine"><span>Line</span></a>
+        <a class="icon rect" data-command="drawRect"><span>Rect</span></a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="Cesium/Cesium.js"></script>
+<script src="script/cesium.api.js"></script>
+<script src="assets/scripts/jquery-2.1.0.min.js"></script>
+<script src="assets/scripts/UIController.js"></script>
+<script src="script/app.js"></script>
+</body>
+</html>

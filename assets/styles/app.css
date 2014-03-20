@@ -1,0 +1,41 @@
+html,body,ul,li,ol,dl,dd,dt,p,h1,h2,h3,h4,h5,h6,form,fieldset,legend,img{margin:0;padding:0;}
+fieldset,img{border:none;}
+address,caption,cite,code,dfn,th,var{font-style:normal;font-weight:normal;}
+ul,ol{list-style:none;}
+input{padding-top:0;padding-bottom:0;}
+input::-moz-focus-inner{border:none;padding:0;}
+select,input{vertical-align:middle;}
+select,input,textarea{font-size:12px;margin:0;}
+input[type="text"],input[type="password"],textarea{outline-style:none;-webkit-appearance:none;}
+textarea{resize:none;}
+body{color:#fff; font: 12px/24px "Arial","Microsoft YaHei","\u5FAE\u8F6F\u96C5\u9ED1","SimSun","\u5B8B\u4F53";}
+a{color:#fff; text-decoration:none;}
+a:visited{color:#333;}
+a:hover{color:#ccc;}
+.clearfix:after{clear:both;content:".";display:block;height:0;visibility:hidden;}
+
+html,body{width:100%; height:100%;}
+.app{width:100%; height:100%; overflow:hidden; position:relative;}
+
+.cesium{width:100%; height:100%; background-color:black;}
+
+.operation{position:absolute; top:20px; left:20px; z-index:10;}
+.icon{width:45px; height:45px; border:1px solid rgba(255,255,255,0.3); display:block; border-radius:3px; cursor:pointer;
+-webkit-transition:border 0.3s ease;
+background-image:-webkit-linear-gradient(top, rgba(255,255,255,0.5), rgba(255,255,255,0.4), rgba(255,255,255,0.6));
+}
+.icon:hover{background-image:-webkit-linear-gradient(top, rgba(255,255,255,0.4), rgba(255,255,255,0.5), rgba(255,255,255,0.4)); border-color:rgba(255,255,255,0.8);}
+.icon:hover span{opacity:1;}
+.icon span{width:45px; height:45px; display:block; text-indent:-9999em; opacity:0.3; -webkit-transition:opacity 0.3s ease;}
+.icon.editor span{background:url(../images/icon_editor.png) no-repeat center;}
+.icon.shape span{background:url(../images/icon_shape.png) no-repeat center;}
+.icon.ruler span{background:url(../images/icon_ruler.png) no-repeat center;}
+.icon.line span{background:url(../images/icon_line.png) no-repeat center;}
+.icon.rect span{background:url(../images/icon_rect.png) no-repeat center;}
+
+.ope-type-w{float:left;}
+.ope-command{float:right; margin-left:2px; margin-top:49px;}
+
+.ope-type{padding:2px 0 0; height:0px; overflow:hidden; -webkit-transition:height 0.1s ease-out;}
+.ope-type .icon, .ope-command .icon{margin-bottom:2px;}
+.ope-command{display:none;}
