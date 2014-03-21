@@ -32,10 +32,6 @@ UIController.prototype = {
       e.stopPropagation();
       that._operationsOnClick($(this).index(), $(this).attr('data-command'));
     });
-
-    $(document).on('click', function(){
-      that._hideOperations();
-    });
   },
   _toggleOperations: function(){
     var that = this;
@@ -63,7 +59,7 @@ UIController.prototype = {
   _hideCommands: function(){
     var that = this;
     that.operationsTrigger.css('height', '0px');
-    that.operation.find('.ope-command').hide();
+    that.operation.find('.ope-command').removeAttr('data-shouldhide').hide();
   },
   _operationsOnClick: function(index, command){
     var that = this;
@@ -71,7 +67,14 @@ UIController.prototype = {
     that.operation.find('.ope-command').hide();
 
     var commandW = that.operation.find('.ope-command[data-command="' + command + '"]');
-    commandW.css('margin-top', (index + 1) * that.operationHeight + 'px').show();
+
+    if(commandW.attr('data-shouldhide')){
+      commandW.hide();
+      that.operation.find('.ope-command').removeAttr('data-shouldhide');
+    } else {
+      that.operation.find('.ope-command').removeAttr('data-shouldhide')
+      commandW.css('margin-top', (index + 1) * that.operationHeight + 'px').show().attr('data-shouldhide', 'true');
+    }
   },
   _executeCommand: function(command){
     var that = this;

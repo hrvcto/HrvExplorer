@@ -12,6 +12,8 @@ CesiumAPI.setWidget = function(widget){
   var PolylineGeometry = Cesium.PolylineGeometry;
   var PolylineMaterialAppearance = Cesium.PolylineMaterialAppearance;
   var Material = Cesium.Material;
+  var Extent = Cesium.Extent;
+  var ExtentOutlineGeometry = Cesium.ExtentOutlineGeometry;
 
   var widget, scene, centralBody, primitives, ellipsoid;
 
