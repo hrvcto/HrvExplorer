@@ -12,7 +12,7 @@
       geodesic: true
     });
     scene.primitives.add(polyline);
-    // polyline.setEditable();
+    dataTreeHelper.addNode(11, "Line");
   });
 
   drawListener.addListener('extentCreated', function(event){
@@ -22,7 +22,7 @@
       material: Cesium.Material.fromType(Cesium.Material.StripeType)
     });
     scene.primitives.add(extentPrimitive);
-    //extentPrimitive.setEditable();
+    dataTreeHelper.addNode(12, "Rect");
   });
 
   var executor = {
@@ -49,35 +49,56 @@
     executor: executor
   });
 
-
-  /*window.cesiumWidget = cesiumWidget;
-  CesiumAPI.setWidget(cesiumWidget);
-
-  var line = CesiumAPI.drawLine([
-    {longitude: -100.0, latitude:36.0, height:0},
-    {longitude: -92.0, latitude:36.0, height:300},
-    {longitude: -80.0, latitude:36.0, height:8890}
-    ], '1.0, 0.8, 0.1, 1.0', 2.0);
-
-  setTimeout(function(){
-    line.appearance = new Cesium.PolylineMaterialAppearance({
-        material : Cesium.Material.fromType('Color', {
-          color: new Cesium.Color(1.0, 1.0, 1.0, 1.0)
-        })
-      });
-  }, 3000);
-  
-
-  var operationDOM = $('#operationWrapper');
-  function showOperation(){
-    operationDOM.addClass('show');
-  }
-  function hideOperation(){
-    operationDOM.removeClass('show');
-  }
+  var treeListeners = {
+    onCheck: function(e, treeId, treeNode){
+    }
+  };
 
 
-  $('#tabs').tabs();
-  window.showOperation = showOperation;
-  window.hideOperation = hideOperation;*/
+  var dataTree = (function(){
+    var settings = {
+      check: {
+        enable: true
+      },
+      view: {
+        showLine: false
+      },
+      data: {
+        simpleData: {
+          enable: true
+        }
+      },
+      callback: {
+        onCheck: treeListeners.onCheck
+      }
+    };
+    var data = [
+      {id:1, pId:0, name: '所有对象', open: true, isParent: true},
+      {id:11, pId:1, name: '折线', isParent: true},
+      {id:12, pId:1, name: '多边形', isParent: true}
+    ];
+    return $.fn.zTree.init($("#theTree"), settings, data);
+  })();
+
+  window.dataTree = dataTree;
+
+  var dataTreeHelper = (function(){
+    function siteID(){
+      return ++siteID._id;
+    }
+    siteID._id = 10000;
+
+    var helper = {
+      addNode: function(pid, name){
+        var pnode = dataTree.getNodesByParam('id', pid, null);
+        if(pnode.length){
+          dataTree.addNodes(pnode[0], {id: siteID(), pId: pid, name: name, isParent: false}, false);
+        } else {
+          dataTree.addNodes(null, {id: siteID(), pId: pid, name: name, isParent: false}, false);
+        }
+      }
+    };
+
+    return helper;
+  })();
 })();

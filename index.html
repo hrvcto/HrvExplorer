@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <link rel="stylesheet" href="assets/styles/app.css">
   <link rel="stylesheet" href="Cesium/Widgets/widgets.css">
+  <link rel="stylesheet" href="assets/styles/zTree/zTreeStyle.css">
 </head>
 <body>
 <div class="app">
@@ -37,10 +38,16 @@
 
     </div>
   </div>
+
+  <div class="object-tree">
+    <ul class="the-tree ztree" id="theTree">
+    </ul>
+  </div>
 </div>
 
 <script src="Cesium/Cesium.js"></script>
 <script src="assets/scripts/jquery-2.1.0.min.js"></script>
+<script src="assets/scripts/jquery.ztree.all-3.5.min.js"></script>
 <script src="assets/scripts/UIController.js"></script>
 <script src="CesiumAPI/CesiumHelper.js"></script>
 <script src="script/app.js"></script>

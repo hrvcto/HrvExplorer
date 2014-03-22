@@ -32,6 +32,7 @@ background-image:-webkit-linear-gradient(top, rgba(255,255,255,0.5), rgba(255,25
 .icon.ruler span{background:url(../images/icon_ruler.png) no-repeat center;}
 .icon.line span{background:url(../images/icon_line.png) no-repeat center;}
 .icon.rect span{background:url(../images/icon_rect.png) no-repeat center;}
+.icon.tree span{background:url(../images/icon_tree.png) no-repeat center; background-size:32px auto;}
 
 .ope-type-w{float:left;}
 .ope-command{float:right; margin-left:2px; margin-top:49px;}
@@ -39,3 +40,5 @@ background-image:-webkit-linear-gradient(top, rgba(255,255,255,0.5), rgba(255,25
 .ope-type{padding:2px 0 0; height:0px; overflow:hidden; -webkit-transition:height 0.1s ease-out;}
 .ope-type .icon, .ope-command .icon{margin-bottom:2px;}
 .ope-command{display:none;}
+
+.object-tree{position:absolute; top:20px; right:20px; bottom:20px; padding:10px; overflow-y:auto; z-index:10;}
